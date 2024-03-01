@@ -5,13 +5,13 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Dashboard - NiceAdmin Bootstrap Template</title>
+  <title>Dashboard-FMS</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/FMS.png" rel="icon">
+  <link href="assets/img/FMS.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -39,14 +39,17 @@
 </head>
 
 <body>
-
+<div id="notification" class="notification">
+        <span class="message">Welcome to Financial Guardians!</span>
+    </div>
+    
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">NiceAdmin</span>
+      <a href="dashboard" class="logo d-flex align-items-center">
+        <img src="assets/img/FMS.png" alt="">
+        <span class="d-none d-lg-block">FINANCIAL GUARDIANS</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -211,33 +214,22 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+            <img src="assets/img/man.png" alt="Profile" class="rounded-circle">
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Kevin Anderson</h6>
-              <span>Web Designer</span>
+                <img src="assets/img/man.png" alt="Profile" class="round-circle" style="width: 100px; height: 100px;">
+              <h6>Guest</h6>
             </li>
             <li>
               <hr class="dropdown-divider">
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+              <a class="dropdown-item d-flex align-items-center" href="profile">
                 <i class="bi bi-person"></i>
                 <span>My Profile</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                <i class="bi bi-gear"></i>
-                <span>Account Settings</span>
               </a>
             </li>
             <li>
@@ -255,10 +247,21 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
-                <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
-              </a>
+            <form method="POST" action="{{ route('logout') }}">
+    @csrf
+    <x-dropdown-link :href="route('logout')"
+    onclick="event.preventDefault();
+    this.closest('form').submit();"
+    style="color: black;"
+    class="dropdown-item d-flex align-items-center"
+>
+    <i class="bi bi-gear"></i>
+    {{ __('Log Out') }}
+</x-dropdown-link>
+
+</form>
+
+                        <hr class="dropdown-divider">
             </li>
 
           </ul><!-- End Profile Dropdown Items -->
@@ -275,234 +278,11 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="index.html">
+        <a class="nav-link " href="dashboard">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="components-alerts.html">
-              <i class="bi bi-circle"></i><span>Alerts</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-accordion.html">
-              <i class="bi bi-circle"></i><span>Accordion</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-badges.html">
-              <i class="bi bi-circle"></i><span>Badges</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-breadcrumbs.html">
-              <i class="bi bi-circle"></i><span>Breadcrumbs</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-buttons.html">
-              <i class="bi bi-circle"></i><span>Buttons</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-cards.html">
-              <i class="bi bi-circle"></i><span>Cards</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-carousel.html">
-              <i class="bi bi-circle"></i><span>Carousel</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-list-group.html">
-              <i class="bi bi-circle"></i><span>List group</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-modal.html">
-              <i class="bi bi-circle"></i><span>Modal</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-tabs.html">
-              <i class="bi bi-circle"></i><span>Tabs</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-pagination.html">
-              <i class="bi bi-circle"></i><span>Pagination</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-progress.html">
-              <i class="bi bi-circle"></i><span>Progress</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-spinners.html">
-              <i class="bi bi-circle"></i><span>Spinners</span>
-            </a>
-          </li>
-          <li>
-            <a href="components-tooltips.html">
-              <i class="bi bi-circle"></i><span>Tooltips</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Components Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="forms-elements.html">
-              <i class="bi bi-circle"></i><span>Form Elements</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-layouts.html">
-              <i class="bi bi-circle"></i><span>Form Layouts</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-editors.html">
-              <i class="bi bi-circle"></i><span>Form Editors</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-validation.html">
-              <i class="bi bi-circle"></i><span>Form Validation</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Forms Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="tables-general.html">
-              <i class="bi bi-circle"></i><span>General Tables</span>
-            </a>
-          </li>
-          <li>
-            <a href="tables-data.html">
-              <i class="bi bi-circle"></i><span>Data Tables</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Tables Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-bar-chart"></i><span>Charts</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="charts-chartjs.html">
-              <i class="bi bi-circle"></i><span>Chart.js</span>
-            </a>
-          </li>
-          <li>
-            <a href="charts-apexcharts.html">
-              <i class="bi bi-circle"></i><span>ApexCharts</span>
-            </a>
-          </li>
-          <li>
-            <a href="charts-echarts.html">
-              <i class="bi bi-circle"></i><span>ECharts</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Charts Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-gem"></i><span>Icons</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="icons-bootstrap.html">
-              <i class="bi bi-circle"></i><span>Bootstrap Icons</span>
-            </a>
-          </li>
-          <li>
-            <a href="icons-remix.html">
-              <i class="bi bi-circle"></i><span>Remix Icons</span>
-            </a>
-          </li>
-          <li>
-            <a href="icons-boxicons.html">
-              <i class="bi bi-circle"></i><span>Boxicons</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Icons Nav -->
-
-      <li class="nav-heading">Pages</li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
-          <i class="bi bi-person"></i>
-          <span>Profile</span>
-        </a>
-      </li><!-- End Profile Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-faq.html">
-          <i class="bi bi-question-circle"></i>
-          <span>F.A.Q</span>
-        </a>
-      </li><!-- End F.A.Q Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-contact.html">
-          <i class="bi bi-envelope"></i>
-          <span>Contact</span>
-        </a>
-      </li><!-- End Contact Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-register.html">
-          <i class="bi bi-card-list"></i>
-          <span>Register</span>
-        </a>
-      </li><!-- End Register Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-login.html">
-          <i class="bi bi-box-arrow-in-right"></i>
-          <span>Login</span>
-        </a>
-      </li><!-- End Login Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-error-404.html">
-          <i class="bi bi-dash-circle"></i>
-          <span>Error 404</span>
-        </a>
-      </li><!-- End Error 404 Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-blank.html">
-          <i class="bi bi-file-earmark"></i>
-          <span>Blank</span>
-        </a>
-      </li><!-- End Blank Page Nav -->
-
-    </ul>
 
   </aside><!-- End Sidebar-->
 
@@ -512,7 +292,7 @@
       <h1>Dashboard</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="dashboard">Home</a></li>
           <li class="breadcrumb-item active">Dashboard</li>
         </ol>
       </nav>
@@ -539,7 +319,7 @@
                     <li><a class="dropdown-item" href="#">Today</a></li>
                     <li><a class="dropdown-item" href="#">This Month</a></li>
                     <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
+             sa     </ul>
                 </div>
 
                 <div class="card-body">
@@ -655,58 +435,92 @@
                   <!-- Line Chart -->
                   <div id="reportsChart"></div>
 
-                  <script>
-                    document.addEventListener("DOMContentLoaded", () => {
-                      new ApexCharts(document.querySelector("#reportsChart"), {
-                        series: [{
-                          name: 'Sales',
-                          data: [31, 40, 28, 51, 42, 82, 56],
-                        }, {
-                          name: 'Revenue',
-                          data: [11, 32, 45, 32, 34, 52, 41]
-                        }, {
-                          name: 'Customers',
-                          data: [15, 11, 32, 18, 9, 24, 11]
-                        }],
-                        chart: {
-                          height: 350,
-                          type: 'area',
-                          toolbar: {
-                            show: false
-                          },
-                        },
-                        markers: {
-                          size: 4
-                        },
-                        colors: ['#4154f1', '#2eca6a', '#ff771d'],
-                        fill: {
-                          type: "gradient",
-                          gradient: {
-                            shadeIntensity: 1,
-                            opacityFrom: 0.3,
-                            opacityTo: 0.4,
-                            stops: [0, 90, 100]
-                          }
-                        },
-                        dataLabels: {
-                          enabled: false
-                        },
-                        stroke: {
-                          curve: 'smooth',
-                          width: 2
-                        },
-                        xaxis: {
-                          type: 'datetime',
-                          categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
-                        },
-                        tooltip: {
-                          x: {
-                            format: 'dd/MM/yy HH:mm'
-                          },
-                        }
-                      }).render();
-                    });
-                  </script>
+<script>
+  // Define a function to fetch new data
+  function fetchData() {
+    // Simulate fetching new data from an API or database
+    // For demonstration purposes, I'm generating random data here
+    const salesData = Array.from({ length: 7 }, () => Math.floor(Math.random() * 100));
+    const revenueData = Array.from({ length: 7 }, () => Math.floor(Math.random() * 100));
+    const customersData = Array.from({ length: 7 }, () => Math.floor(Math.random() * 100));
+
+    // Return the new data
+    return {
+      sales: salesData,
+      revenue: revenueData,
+      customers: customersData
+    };
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // Function to update the chart with new data
+    function updateChart() {
+      const newData = fetchData(); // Fetch new data
+      chart.updateSeries([
+        { name: 'Sales', data: newData.sales },
+        { name: 'Revenue', data: newData.revenue },
+        { name: 'Customers', data: newData.customers }
+      ]);
+    }
+
+    // Initialize ApexCharts
+    const chart = new ApexCharts(document.querySelector("#reportsChart"), {
+      series: [{
+        name: 'Sales',
+        data: [31, 40, 28, 51, 42, 82, 56],
+      }, {
+        name: 'Revenue',
+        data: [11, 32, 45, 32, 34, 52, 41]
+      }, {
+        name: 'Customers',
+        data: [15, 11, 32, 18, 9, 24, 11]
+      }],
+      chart: {
+        height: 350,
+        type: 'area',
+        toolbar: {
+          show: false
+        },
+      },
+      markers: {
+        size: 4
+      },
+      colors: ['#4154f1', '#2eca6a', '#ff771d'],
+      fill: {
+        type: "gradient",
+        gradient: {
+          shadeIntensity: 1,
+          opacityFrom: 0.3,
+          opacityTo: 0.4,
+          stops: [0, 90, 100]
+        }
+      },
+      dataLabels: {
+        enabled: false
+      },
+      stroke: {
+        curve: 'smooth',
+        width: 2
+      },
+      xaxis: {
+        type: 'datetime',
+        categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+      },
+      tooltip: {
+        x: {
+          format: 'dd/MM/yy HH:mm'
+        },
+      }
+    });
+
+    // Render the chart
+    chart.render();
+
+    // Example of updating the chart every 5 seconds
+    setInterval(updateChart, 5000); // Update chart every 5 seconds
+  });
+</script>
+
                   <!-- End Line Chart -->
 
                 </div>
@@ -892,7 +706,7 @@
                   <div class="activite-label">32 min</div>
                   <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
                   <div class="activity-content">
-                    Quia quae rerum <a href="#" class="fw-bold text-dark">explicabo officiis</a> beatae
+                    Mr.Roldan create <a href="#" class="fw-bold text-dark">Cyberpanel </a> account
                   </div>
                 </div><!-- End activity item-->
 
@@ -900,41 +714,21 @@
                   <div class="activite-label">56 min</div>
                   <i class='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
                   <div class="activity-content">
-                    Voluptatem blanditiis blanditiis eveniet
+                    The customer increase in 5% of their <a href="#" class="text-dark fw-bold">company's stock</a>
                   </div>
                 </div><!-- End activity item-->
 
-                <div class="activity-item d-flex">
-                  <div class="activite-label">2 hrs</div>
-                  <i class='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
-                  <div class="activity-content">
-                    Voluptates corrupti molestias voluptatem
-                  </div>
-                </div><!-- End activity item-->
+              
 
                 <div class="activity-item d-flex">
                   <div class="activite-label">1 day</div>
                   <i class='bi bi-circle-fill activity-badge text-info align-self-start'></i>
                   <div class="activity-content">
-                    Tempore autem saepe <a href="#" class="fw-bold text-dark">occaecati voluptatem</a> tempore
+                    Ms.Elisa bought Jewelry <a href="#" class="fw-bold text-dark">in Magdalena Pawnshop</a> worth $302
                   </div>
                 </div><!-- End activity item-->
 
-                <div class="activity-item d-flex">
-                  <div class="activite-label">2 days</div>
-                  <i class='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
-                  <div class="activity-content">
-                    Est sit eum reiciendis exercitationem
-                  </div>
-                </div><!-- End activity item-->
-
-                <div class="activity-item d-flex">
-                  <div class="activite-label">4 weeks</div>
-                  <i class='bi bi-circle-fill activity-badge text-muted align-self-start'></i>
-                  <div class="activity-content">
-                    Dicta dolorem harum nulla eius. Ut quidem quidem sit quas
-                  </div>
-                </div><!-- End activity item-->
+               <!-- End activity item-->
 
               </div>
 
@@ -943,74 +737,126 @@
 
           <!-- Budget Report -->
           <div class="card">
-            <div class="filter">
-              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                <li class="dropdown-header text-start">
-                  <h6>Filter</h6>
-                </li>
+  <div class="filter">
+    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+      <li class="dropdown-header text-start">
+        <h6>Filter</h6>
+      </li>
+      <li><a class="dropdown-item filter-option" href="#" data-filter="today">Today</a></li>
+      <li><a class="dropdown-item filter-option" href="#" data-filter="this_month">This Month</a></li>
+      <li><a class="dropdown-item filter-option" href="#" data-filter="this_year">This Year</a></li>
+    </ul>
+  </div>
 
-                <li><a class="dropdown-item" href="#">Today</a></li>
-                <li><a class="dropdown-item" href="#">This Month</a></li>
-                <li><a class="dropdown-item" href="#">This Year</a></li>
-              </ul>
-            </div>
+  <div class="card-body pb-0">
+    <h5 class="card-title">Budget Report <span id="selected-filter">| This Month</span></h5>
+    <div id="budgetChart" style="min-height: 400px;" class="echart"></div>
+  </div>
+</div>
 
-            <div class="card-body pb-0">
-              <h5 class="card-title">Budget Report <span>| This Month</span></h5>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Function to fetch data based on the selected filter
+    function fetchData(filter) {
+      // Simulate fetching data from the backend based on the selected filter
+      // For demonstration purposes, I'm generating random data here
+      let allocatedBudgetData, actualSpendingData;
 
-              <div id="budgetChart" style="min-height: 400px;" class="echart"></div>
+      switch (filter) {
+        case 'today':
+          allocatedBudgetData = [2200, 3500, 15000, 20000, 30000, 12000];
+          actualSpendingData = [3200, 4500, 18000, 25000, 35000, 15000];
+          break;
+        case 'this_month':
+          allocatedBudgetData = [4200, 3000, 20000, 35000, 50000, 18000];
+          actualSpendingData = [5000, 14000, 28000, 26000, 42000, 21000];
+          break;
+        case 'this_year':
+          allocatedBudgetData = [8000, 6000, 40000, 60000, 80000, 35000];
+          actualSpendingData = [9000, 18000, 45000, 65000, 85000, 40000];
+          break;
+        default:
+          allocatedBudgetData = [4200, 3000, 20000, 35000, 50000, 18000];
+          actualSpendingData = [5000, 14000, 28000, 26000, 42000, 21000];
+          break;
+      }
 
-              <script>
-                document.addEventListener("DOMContentLoaded", () => {
-                  var budgetChart = echarts.init(document.querySelector("#budgetChart")).setOption({
-                    legend: {
-                      data: ['Allocated Budget', 'Actual Spending']
-                    },
-                    radar: {
-                      // shape: 'circle',
-                      indicator: [{
-                          name: 'Sales',
-                          max: 6500
-                        },
-                        {
-                          name: 'Administration',
-                          max: 16000
-                        },
-                        {
-                          name: 'Information Technology',
-                          max: 30000
-                        },
-                        {
-                          name: 'Customer Support',
-                          max: 38000
-                        },
-                        {
-                          name: 'Development',
-                          max: 52000
-                        },
-                        {
-                          name: 'Marketing',
-                          max: 25000
-                        }
-                      ]
-                    },
-                    series: [{
-                      name: 'Budget vs spending',
-                      type: 'radar',
-                      data: [{
-                          value: [4200, 3000, 20000, 35000, 50000, 18000],
-                          name: 'Allocated Budget'
-                        },
-                        {
-                          value: [5000, 14000, 28000, 26000, 42000, 21000],
-                          name: 'Actual Spending'
-                        }
-                      ]
-                    }]
-                  });
-                });
-              </script>
+      return { allocatedBudget: allocatedBudgetData, actualSpending: actualSpendingData };
+    }
+
+    // Initialize the chart
+    const budgetChart = echarts.init(document.querySelector("#budgetChart"));
+
+    // Function to update the chart based on the selected filter
+    function updateChart(filter) {
+      const data = fetchData(filter); // Fetch data based on the selected filter
+
+      // Update chart options
+      const options = {
+        legend: {
+          data: ['Allocated Budget', 'Actual Spending']
+        },
+        radar: {
+          indicator: [{
+              name: 'Sales',
+              max: 65000
+            },
+            {
+              name: 'Administration',
+              max: 80000
+            },
+            {
+              name: 'Information Technology',
+              max: 120000
+            },
+            {
+              name: 'Customer Support',
+              max: 120000
+            },
+            {
+              name: 'Development',
+              max: 150000
+            },
+            {
+              name: 'Marketing',
+              max: 80000
+            }
+          ]
+        },
+        series: [{
+          name: 'Budget vs spending',
+          type: 'radar',
+          data: [{
+              value: data.allocatedBudget,
+              name: 'Allocated Budget'
+            },
+            {
+              value: data.actualSpending,
+              name: 'Actual Spending'
+            }
+          ]
+        }]
+      };
+
+      // Set chart options and render
+      budgetChart.setOption(options);
+    }
+
+    // Initial chart render with default filter
+    updateChart('this_month');
+
+    // Event listener for filter selection
+    document.querySelectorAll('.filter-option').forEach(option => {
+      option.addEventListener('click', () => {
+        const selectedFilter = option.getAttribute('data-filter');
+        document.querySelector('#selected-filter').textContent = `| ${option.textContent}`;
+        updateChart(selectedFilter); // Update chart with selected filter
+      });
+    });
+  });
+</script>
+
 
             </div>
           </div><!-- End Budget Report -->
@@ -1157,14 +1003,14 @@
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
-      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+      &copy; Copyright <strong><span>Financial Guardians</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
       <!-- All the links in the footer should remain intact. -->
       <!-- You can delete the links only if you purchased the pro version. -->
       <!-- Licensing information: https://bootstrapmade.com/license/ -->
       <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+     <p> Designed by Group 6 </p>
     </div>
   </footer><!-- End Footer -->
 

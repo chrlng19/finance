@@ -17,6 +17,7 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $table="fgms_g6_users";
     protected $fillable = [
         'name',
         'email',
