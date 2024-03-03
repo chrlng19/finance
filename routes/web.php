@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SaleController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChartController;
@@ -30,6 +31,16 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
 });
+
+Route::get('/sales/create', [SaleController::class, 'create'])->name('sales.create');
+Route::post('/sales', [SaleController::class, 'store'])->name('sales.store');
+
+Route::resource('accounts', 'App\Http\Controllers\AccountController');
+Route::get('/accounts', 'App\Http\Controllers\AccountController@index')->name('accounts.index');
+Route::get('/accounts/create', 'App\Http\Controllers\AccountController@create')->name('accounts.create');
+Route::post('/accounts', 'App\Http\Controllers\AccountController@store')->name('accounts.store');
+Route::resource('accounts', 'App\Http\Controllers\AccountController');
+
 
 
 
