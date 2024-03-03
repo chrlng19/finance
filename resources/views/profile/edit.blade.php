@@ -404,7 +404,7 @@
                     <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="fullName" type="text" class="form-control" id="fullName" value="{{ auth()->fgms_g6_users()->name }}">
+                      
                       </div>
                     </div>
 
