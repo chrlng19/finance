@@ -7,18 +7,24 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\View\View;
+use App\Models\User;
+// use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
     /**
      * Display the user's profile form.
      */
-    public function edit(Request $request): View
+    // public function edit(Request $request)
+    public function edit()
     {
-        return view('profile.edit', [
-            'fgms_g6_users' => $request->user(),
-        ]);
+        // return view('profile.edit', [
+        //     'fgms_g6_users' => $request->user(),
+        // ]);
+        $user = User::first();
+
+        return view('profile.edit', compact('user'));
+        // return dd('oke');
     }
 
     /**
