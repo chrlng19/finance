@@ -21,7 +21,7 @@ class ProfileController extends Controller
         // return view('profile.edit', [
         //     'fgms_g6_users' => $request->user(),
         // ]);
-        $user = User::first();
+       $user = User::first();
 
         return view('profile.edit', compact('user'));
         // return dd('oke');
