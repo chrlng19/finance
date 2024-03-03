@@ -274,7 +274,7 @@
 
       <li class="nav-item">
         <a class="nav-link " href="dashboard">
-          <i class="bi bi-grid"></i>
+          <i class="bi bi-bar-chart"></i>
           <span>Dashboard</span>
         </a>
       </li>
