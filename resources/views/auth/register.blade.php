@@ -68,15 +68,7 @@
                             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
                             <x-input-error :messages="$errors->get('email')" class="mt-2" />
                         </div>
-                        <!-- Role -->
-                        <div class="mt-4">
-                          <x-input-label for="role" :value="__('Role')" />
-                          <select id="role" name="role" class="block mt-1 w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                              <option value="admin">Admin</option>
-                              <option value="client">Client</option>
-                          </select>
-                          <x-input-error :messages="$errors->get('role')" class="mt-2" />
-                      </div>
+                        
 
                         <!-- Password -->
                         <div class="mt-4">
@@ -114,15 +106,6 @@
                 </x-guest-layout>
                 
               </div>
-
-              <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-              </div>
-
             </div>
           </div>
         </div>

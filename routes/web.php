@@ -42,7 +42,49 @@ Route::post('/accounts', 'App\Http\Controllers\AccountController@store')->name('
 Route::resource('accounts', 'App\Http\Controllers\AccountController');
 
 
+// routes/web.php for Redirect
 
+// use App\Http\Controllers\Auth\RegisteredUserController;
+//use App\Http\Controllers\Auth\AuthenticatedSessionController;
+
+//Route::get('/register', [RegisteredUserController::class, 'create'])
+  //  ->middleware('guest')
+ //   ->name('register');
+
+//Route::post('/register', [RegisteredUserController::class, 'store'])
+ //   ->middleware('guest');
+
+//Route::get('/login', [AuthenticatedSessionController::class, 'create'])
+//    ->middleware('guest')
+//    ->name('login');
+
+//Route::post('/login', [AuthenticatedSessionController::class, 'store'])
+  //  ->middleware('guest');  -->
+
+// Other routes...
+
+//Foget Password
+use App\Http\Controllers\Auth\ForgotPasswordController;
+
+// Show the password reset request form
+Route::get('/forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])
+    ->middleware('guest')
+    ->name('password.request');
+
+// Handle the password reset request
+Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])
+    ->middleware('guest')
+    ->name('password.email');
+
+// Show the password reset form
+Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])
+    ->middleware('guest')
+    ->name('password.reset');
+
+// Handle the password reset request
+Route::post('/reset-password', [ResetPasswordController::class, 'reset'])
+    ->middleware('guest')
+    ->name('password.update');
 
 
 require __DIR__.'/auth.php';
