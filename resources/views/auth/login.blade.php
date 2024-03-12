@@ -54,17 +54,48 @@
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+   <!-- Password -->
+<div class="mt-4">
+    <x-input-label for="password" :value="__('Password')" />
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
+    <div class="relative">
+        <x-text-input id="password" class="block mt-1 w-full pr-10"
+                        type="password"
+                        name="password"
+                        required autocomplete="current-password" />
+        <button type="button" onclick="togglePasswordVisibility()" class="absolute inset-y-0 right-0 px-3 py-2">
+            <!-- Closed Eye SVG Icon -->
+            <img id="closed-eye" src="assets/img/hide.png" alt="Closed Eye Icon" class="w-6 h-6">
 
-            <x-input-error :messages="$errors->get('password')" clazss="mt-2" />
-        </div>
+            <!-- Open Eye SVG Icon -->
+            <img id="open-eye" src="assets/img/eye.png" alt="Open Eye Icon" class="w-6 h-6" style="display:none;">
+        </button>
+    </div>
+    <script>
+    function togglePasswordVisibility() {
+        var passwordInput = document.getElementById('password');
+        var closedEyeIcon = document.getElementById('closed-eye');
+        var openEyeIcon = document.getElementById('open-eye');
+        
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            closedEyeIcon.style.display = 'none';
+            openEyeIcon.style.display = 'inline-block';
+        } else {
+            passwordInput.type = 'password';
+            closedEyeIcon.style.display = 'inline-block';
+            openEyeIcon.style.display = 'none';
+        }
+    }
+</script>
+
+
+    <x-input-error :messages="$errors->get('password')" class="mt-2" />
+</div>
+
+
+
+
 
         <!-- Remember Me -->
         <div class="block mt-4">

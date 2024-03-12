@@ -4,7 +4,7 @@
 <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Chart of Account</title>
+  <title>Risk Management</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -277,15 +277,15 @@ class="dropdown-item d-flex align-items-center"
 
   <li class="nav-item">
     <a class="nav-link " href="dashboard">
-      <i class="bi bi-grid"></i>
+    <i class="ri-dashboard-3-line"></i>
       <span>Dashboard</span>
     </a>
   </li>
   
   <li class="nav-item">
     <a class="nav-link " href="accounts">
-      <i class="bi bi-grid"></i>
-      <span>Chart of Accounts</span>
+    <i class="ri-file-shield-2-line"></i>
+      <span>Risk Management </span>
     </a>
   </li><!-- End Dashboard Nav -->
   
@@ -294,88 +294,54 @@ class="dropdown-item d-flex align-items-center"
 <body>
     <main id="main" class="main">
 <div class="pagetitle">
-      <h1>Chart of Account</h1>
+      <h1>Risk Management</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="dashboard">Home</a></li>
-          <li class="breadcrumb-item active">Chart of Account</li>
+          <li class="breadcrumb-item active">Risk Management</li>
         </ol>
       </nav>
     </div>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Code</th>
-                <th>Type</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($accounts as $account)
-            <tr>
-                <td>{{ $account->id }}</td>
-                <td>{{ $account->name }}</td>
-                <td>{{ $account->code }}</td>
-                <td>{{ $account->type }}</td>
-                <td>
-                <a href="{{ route('accounts.show', $account->id) }}" class="btn-primary">View</a>
-                        <a href="{{ route('accounts.edit', $account->id) }}" class="btn-primary">Edit</a>
-                        <form action="{{ route('accounts.destroy', $account->id) }}" method="POST" style="display: inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn-secondary">Delete</button>
-                    </form>
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
-    <div id="modalContainer" class="modal-container" class="main">
-        <div class="modal-content">
-            <!-- Modal content here -->
-            <form action="{{ route('accounts.store') }}" method="POST">
-                @csrf
-                <div>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name">
-                </div>
-                <div>
-                    <label for="code">Code:</label>
-                    <input type="text" id="code" name="code">
-                </div>
-                <div>
-                    <label for="type">Type:</label>
-                    <select name="type" id="type">
-                        <option value="asset">Asset</option>
-                        <option value="liability">Liability</option>
-                        <option value="equity">Equity</option>
-                        <option value="income">Income</option>
-                        <option value="expense">Expense</option>
-                    </select>
-                </div>
-                <button type="submit">Save</button>
-                <a href="{{ route('accounts.index') }}" class="btn-secondary">Cancel</a>
-            </form> 
+  
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-6">
+
+          <div class="card">
+            <div class="card-body">
+            <h5 class="card-title">Notes:</h5>
+            <div style="text-align: center;">
+              <img src="assets/img/RiskRanking.png" alt="Risk" width="100%" height="330">
+          </div>
+
+            </div>
+          </div>
+
         </div>
-    </div>
 
-    <script>
-        // Function to open the modal
-        function openModal() {
-            var modal = document.getElementById("modalContainer");
-            modal.style.display = "block";
-        }
+        <div class="col-lg-6">
 
-        // Function to close the modal
-        function closeModal() {
-            var modal = document.getElementById("modalContainer");
-            modal.style.display = "none";
-        }
-    </script>
-   <a href="#" class="btn-primary" onclick="openModal()">Add New Account</a>
+          <div class="card">
+            <div class="card-body">
+            <h5 class="card-title">Notes:</h5>
+            <div style="text-align: center;">
+               <img src="assets/img/ManageGraph.png" alt="Risk" width="100%" height="100%">
+            </div>
 
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Example Card</h5>
+              <p>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</p>
+            </div>
+</div>
+</div>
 
 
     

@@ -274,15 +274,15 @@
 
       <li class="nav-item">
         <a class="nav-link " href="dashboard">
-          <i class="bi bi-bar-chart"></i>
+        <i class="ri-dashboard-3-line"></i>
           <span>Dashboard</span>
         </a>
       </li>
       
       <li class="nav-item">
         <a class="nav-link " href="accounts">
-          <i class="bi bi-grid"></i>
-          <span>Chart of Accounts</span>
+          <i class="ri-file-shield-2-line"></i>
+          <span>Risk Management </span>
         </a>
       </li><!-- End Dashboard Nav -->
 
@@ -306,148 +306,113 @@
         <!-- Left side columns -->
         <div class="col-lg-8">
           <div class="row">
-<!-- Sales Card -->
-<div class="col-xxl-4 col-md-6">
-  <div class="card info-card sales-card">
 
-    <!-- Filter dropdown -->
-    <div class="filter">
-      <!-- Dropdown menu for filter options -->
-    </div>
+            <!-- Sales Card -->
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card sales-card">
 
-    <div class="card-body">
-      <h5 class="card-title">Sales <span>| Today</span></h5>
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
 
-      <div class="d-flex align-items-center">
-        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-          <i class="bi bi-cart"></i>
-        </div>
-        <div class="ps-3">
-          <!-- Replace '145' with actual sales data -->
-          <h6>145</h6>
-          <!-- Calculate and display percentage change -->
-          <span class="text-success small pt-1 fw-bold">
-            <script>
-              var currentSales = 145; // Replace with actual sales data
-              var previousSales = 130; // Replace with previous day's sales data
-              var percentageChange = ((currentSales - previousSales) / previousSales) * 100;
-              document.write(percentageChange.toFixed(2) + "%");
-            </script>
-          </span> 
-          <!-- Display whether it's an increase or decrease -->
-          <span class="text-muted small pt-2 ps-1">
-            <script>
-              if (currentSales > previousSales) {
-                document.write("increase");
-              } else if (currentSales < previousSales) {
-                document.write("decrease");
-              } else {
-                document.write("no change");
-              }
-            </script>
-          </span>
-        </div>
-      </div>
-    </div>
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
 
-  </div>
-</div><!-- End Sales Card -->
+                <div class="card-body">
+                  <h5 class="card-title">Sales <span>| Today</span></h5>
 
-<!-- Revenue Card -->
-<div class="col-xxl-4 col-md-6">
-  <div class="card info-card revenue-card">
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-cart"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>145</h6>
+                      <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span>
 
-    <!-- Filter dropdown -->
-    <div class="filter">
-      <!-- Dropdown menu for filter options -->
-    </div>
+                    </div>
+                  </div>
+                </div>
 
-    <div class="card-body">
-      <h5 class="card-title">Revenue <span>| This Month</span></h5>
+              </div>
+            </div><!-- End Sales Card -->
 
-      <div class="d-flex align-items-center">
-        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-          <i class="bi bi-currency-dollar"></i>
-        </div>
-        <div class="ps-3">
-          <!-- Replace '$3,264' with actual revenue data -->
-          <h6>$3,264</h6>
-          <!-- Calculate and display percentage change -->
-          <span class="text-success small pt-1 fw-bold">
-            <script>
-              var currentRevenue = 3264; // Replace with actual revenue data
-              var previousRevenue = 3000; // Replace with previous month's revenue data
-              var percentageChange = ((currentRevenue - previousRevenue) / previousRevenue) * 100;
-              document.write(percentageChange.toFixed(2) + "%");
-            </script>
-          </span> 
-          <!-- Display whether it's an increase or decrease -->
-          <span class="text-muted small pt-2 ps-1">
-            <script>
-              if (currentRevenue > previousRevenue) {
-                document.write("increase");
-              } else if (currentRevenue < previousRevenue) {
-                document.write("decrease");
-              } else {
-                document.write("no change");
-              }
-            </script>
-          </span>
-        </div>
-      </div>
-    </div>
+            <!-- Revenue Card -->
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card revenue-card">
 
-  </div>
-</div><!-- End Revenue Card -->
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
 
-<!-- Customers Card -->
-<div class="col-xxl-4 col-xl-12">
-  <div class="card info-card customers-card">
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
 
-    <!-- Filter dropdown -->
-    <div class="filter">
-      <!-- Dropdown menu for filter options -->
-    </div>
+                <div class="card-body">
+                  <h5 class="card-title">Revenue <span>| This Month</span></h5>
 
-    <div class="card-body">
-      <h5 class="card-title">Risk <span>| This Year</span></h5>
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                    <i class="bx bx-money"></i> 
+                    </div>
+                    <div class="ps-3">
+                      <h6>₱3,264</h6>
+                      <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
 
-      <div class="d-flex align-items-center">
-        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-          <i class="bi bi-people"></i>
-        </div>
-        <div class="ps-3">
-          <!-- Replace '1244' with actual risk data -->
-          <h6>1244</h6>
-          <!-- Calculate and display percentage change -->
-          <span class="text-danger small pt-1 fw-bold">
-            <script>
-              var currentRisk = 1244; // Replace with actual risk data
-              var previousRisk = 1400; // Replace with previous year's risk data
-              var percentageChange = ((currentRisk - previousRisk) / previousRisk) * 100;
-              document.write(percentageChange.toFixed(2) + "%");
-            </script>
-          </span> 
-          <!-- Display whether it's an increase or decrease -->
-          <span class="text-muted small pt-2 ps-1">
-            <script>
-              if (currentRisk > previousRisk) {
-                document.write("increase");
-              } else if (currentRisk < previousRisk) {
-                document.write("decrease");
-              } else {
-                document.write("no change");
-              }
-            </script>
-          </span>
-        </div>
-      </div>
-    </div>
+                    </div>
+                  </div>
+                </div>
 
-  </div>
-</div><!-- End Customers Card -->
+              </div>
+            </div><!-- End Revenue Card -->
 
+            <!-- Customers Card -->
+            <div class="col-xxl-4 col-xl-12">
 
+              <div class="card info-card customers-card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Customers <span>| This Year</span></h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-people"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>1244</h6>
+                      <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div><!-- End Customers Card -->
 
             <!-- Reports -->
             <div class="col-12">
@@ -469,85 +434,199 @@
                 <div class="card-body">
                   <h5 class="card-title">Reports <span>/Today</span></h5>
 
-                    <!-- Line Chart -->
-      <div id="reportsChart"></div>
+                 <!-- Line Chart -->
+<div id="reportsChart"></div>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        fetchChartData();
+    });
 
+    function fetchChartData() {
+        fetch('{{ route("reports.chartData") }}')
+            .then(response => response.json())
+            .then(data => renderChart(data))
+            .catch(error => console.error('Error fetching chart data:', error));
+    }
+
+    function renderChart(data) {
+        new ApexCharts(document.querySelector("#reportsChart"), {
+            series: [{
+                name: 'Sales',
+                data: data.map(item => item.sales),
+            }, {
+                name: 'Revenue',
+                data: data.map(item => item.revenue),
+            }, {
+                name: 'Customers',
+                data: data.map(item => item.customers),
+            }],
+            chart: {
+                height: 350,
+                type: 'area',
+                toolbar: {
+                    show: false
+                },
+            },
+            // Add other configurations as needed
+        }).render();
+    } 
+</script>
 <!-- End Line Chart -->
 
-<div class="pt-3">
-  <span class="text-success small fw-bold">Sales: </span>
-  <span id="salesChange" class="text-success small"></span><br>
 
-  <span class="text-success small fw-bold">Revenue: </span>
-  <span id="revenueChange" class="text-success small"></span><br>
-
-  <span class="text-danger small fw-bold">Risk: </span>
-  <span id="riskChange" class="text-danger small"></span>
-</div>
-
-</div>
-
-</div>
-</div><!-- End Reports -->
-
-<script>
-// Function to calculate percentage change
-function calculatePercentageChange(currentValue, previousValue) {
-return ((currentValue - previousValue) / previousValue) * 100;
-}
-
-// Function to update percentage change
-function updatePercentageChange(elementId, currentValue, previousValue) {
-var percentageChange = calculatePercentageChange(currentValue, previousValue);
-document.getElementById(elementId).textContent = percentageChange.toFixed(2) + "%";
-if (currentValue > previousValue) {
-document.getElementById(elementId).classList.add("text-success");
-document.getElementById(elementId).textContent += " increase";
-} else if (currentValue < previousValue) {
-document.getElementById(elementId).classList.add("text-danger");
-document.getElementById(elementId).textContent += " decrease";
-} else {
-document.getElementById(elementId).textContent += " no change";
-}
-}
-
-// Function to fetch new data
-function fetchData() {
-// Simulate fetching new data from an API or database
-// For demonstration purposes, I'm generating random data here
-const salesData = Math.floor(Math.random() * 100);
-const revenueData = Math.floor(Math.random() * 1000);
-const riskData = Math.floor(Math.random() * 100);
-
-// Return the new data
-return {
-sales: salesData,
-revenue: revenueData,
-risk: riskData
-};
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-// Function to update percentage change
-function updatePercentageChanges() {
-const newData = fetchData(); // Fetch new data
-// Update sales percentage change
-updatePercentageChange("salesChange", newData.sales, 145); // Assuming previous sales value is 145
-// Update revenue percentage change
-updatePercentageChange("revenueChange", newData.revenue, 3264); // Assuming previous revenue value is $3,264
-// Update risk percentage change
-updatePercentageChange("riskChange", newData.risk, 1244); // Assuming previous risk value is 1244
-}
-
-// Example of updating percentage change every 5 seconds
-setInterval(updatePercentageChanges, 5000); // Update percentage change every 5 seconds
-});
-</script>
 
                 </div>
 
               </div>
             </div><!-- End Reports -->
+
+            <!-- Recent Sales -->
+            <div class="col-12">
+              <div class="card recent-sales overflow-auto">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Recent Sales <span>| Today</span></h5>
+
+                  <table class="table table-borderless datatable">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Customer</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row"><a href="#">#2457</a></th>
+                        <td>Brandon Jacob</td>
+                        <td><a href="#" class="text-primary">At praesentium minu</a></td>
+                        <td>₱64</td>
+                        <td><span class="badge bg-success">Approved</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">#2147</a></th>
+                        <td>Bridie Kessler</td>
+                        <td><a href="#" class="text-primary">Blanditiis dolor omnis similique</a></td>
+                        <td>₱47</td>
+                        <td><span class="badge bg-warning">Pending</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">#2049</a></th>
+                        <td>Ashleigh Langosh</td>
+                        <td><a href="#" class="text-primary">At recusandae consectetur</a></td>
+                        <td>₱147</td>
+                        <td><span class="badge bg-success">Approved</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">#2644</a></th>
+                        <td>Angus Grady</td>
+                        <td><a href="#" class="text-primar">Ut voluptatem id earum et</a></td>
+                        <td>₱67</td>
+                        <td><span class="badge bg-danger">Rejected</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#">#2644</a></th>
+                        <td>Raheem Lehner</td>
+                        <td><a href="#" class="text-primary">Sunt similique distinctio</a></td>
+                        <td>₱165</td>
+                        <td><span class="badge bg-success">Approved</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+
+              </div>
+            </div><!-- End Recent Sales -->
+
+            <!-- Top Selling -->
+            <div class="col-12">
+              <div class="card top-selling overflow-auto">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body pb-0">
+                  <h5 class="card-title">Top Selling <span>| Today</span></h5>
+
+                  <table class="table table-borderless">
+                    <thead>
+                      <tr>
+                        <th scope="col">Preview</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Sold</th>
+                        <th scope="col">Revenue</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row"><a href="#"><img src="assets/img/product-1.jpg" alt=""></a></th>
+                        <td><a href="#" class="text-primary fw-bold">Ut inventore ipsa voluptas nulla</a></td>
+                        <td>$64</td>
+                        <td class="fw-bold">124</td>
+                        <td>$5,828</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#"><img src="assets/img/product-2.jpg" alt=""></a></th>
+                        <td><a href="#" class="text-primary fw-bold">Exercitationem similique doloremque</a></td>
+                        <td>$46</td>
+                        <td class="fw-bold">98</td>
+                        <td>$4,508</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#"><img src="assets/img/product-3.jpg" alt=""></a></th>
+                        <td><a href="#" class="text-primary fw-bold">Doloribus nisi exercitationem</a></td>
+                        <td>$59</td>
+                        <td class="fw-bold">74</td>
+                        <td>$4,366</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#"><img src="assets/img/product-4.jpg" alt=""></a></th>
+                        <td><a href="#" class="text-primary fw-bold">Officiis quaerat sint rerum error</a></td>
+                        <td>$32</td>
+                        <td class="fw-bold">63</td>
+                        <td>$2,016</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#"><img src="assets/img/product-5.jpg" alt=""></a></th>
+                        <td><a href="#" class="text-primary fw-bold">Sit unde debitis delectus repellendus</a></td>
+                        <td>$79</td>
+                        <td class="fw-bold">41</td>
+                        <td>$3,239</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+
+              </div>
+            </div><!-- End Top Selling -->
 
           </div>
         </div><!-- End Left side columns -->
@@ -555,129 +634,149 @@ setInterval(updatePercentageChanges, 5000); // Update percentage change every 5 
         <!-- Right side columns -->
         <div class="col-lg-4">
 
+          <!-- Recent Activity -->
+          <div class="card">
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+              </ul>
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title">Recent Activity <span>| Today</span></h5>
+
+              <div class="activity">
+
+                <div class="activity-item d-flex">
+                  <div class="activite-label">32 min</div>
+                  <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
+                  <div class="activity-content">
+                    Quia quae rerum <a href="#" class="fw-bold text-dark">explicabo officiis</a> beatae
+                  </div>
+                </div><!-- End activity item-->
+
+                <div class="activity-item d-flex">
+                  <div class="activite-label">56 min</div>
+                  <i class='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
+                  <div class="activity-content">
+                    Voluptatem blanditiis blanditiis eveniet
+                  </div>
+                </div><!-- End activity item-->
+
+                <div class="activity-item d-flex">
+                  <div class="activite-label">2 hrs</div>
+                  <i class='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
+                  <div class="activity-content">
+                    Voluptates corrupti molestias voluptatem
+                  </div>
+                </div><!-- End activity item-->
+
+                <div class="activity-item d-flex">
+                  <div class="activite-label">1 day</div>
+                  <i class='bi bi-circle-fill activity-badge text-info align-self-start'></i>
+                  <div class="activity-content">
+                    Tempore autem saepe <a href="#" class="fw-bold text-dark">occaecati voluptatem</a> tempore
+                  </div>
+                </div><!-- End activity item-->
+
+                <div class="activity-item d-flex">
+                  <div class="activite-label">2 days</div>
+                  <i class='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
+                  <div class="activity-content">
+                    Est sit eum reiciendis exercitationem
+                  </div>
+                </div><!-- End activity item-->
+
+                <div class="activity-item d-flex">
+                  <div class="activite-label">4 weeks</div>
+                  <i class='bi bi-circle-fill activity-badge text-muted align-self-start'></i>
+                  <div class="activity-content">
+                    Dicta dolorem harum nulla eius. Ut quidem quidem sit quas
+                  </div>
+                </div><!-- End activity item-->
+
+              </div>
+
+            </div>
+          </div><!-- End Recent Activity -->
 
           <!-- Budget Report -->
           <div class="card">
-  <div class="filter">
-    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-      <li class="dr opdown-header text-start">
-        <h6>Filter</h6>
-      </li>
-      <li><a class="dropdown-item filter-option" href="#" data-filter="today">Today</a></li>
-      <li><a class="dropdown-item filter-option" href="#" data-filter="this_month">This Month</a></li>
-      <li><a class="dropdown-item filter-option" href="#" data-filter="this_year">This Year</a></li>
-    </ul>
-  </div>
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
 
-  <div class="card-body pb-0">
-    <h5 class="card-title">Budget Report <span id="selected-filter">| This Month</span></h5>
-    <div id="budgetChart" style="min-height: 400px;" class="echart"></div>
-  </div>
-</div>
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+              </ul>
+            </div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // Function to fetch data based on the selected filter
-    function fetchData(filter) {
-      // Simulate fetching data from the backend based on the selected filter
-      // For demonstration purposes, I'm generating random data here
-      let allocatedBudgetData, actualSpendingData;
+            <div class="card-body pb-0">
+              <h5 class="card-title">Budget Report <span>| This Month</span></h5>
 
-      switch (filter) {
-        case 'today':
-          allocatedBudgetData = [2200, 3500, 15000, 20000, 30000, 12000];
-          actualSpendingData = [3200, 4500, 18000, 25000, 35000, 15000];
-          break;
-        case 'this_month':
-          allocatedBudgetData = [4200, 3000, 20000, 35000, 50000, 18000];
-          actualSpendingData = [5000, 14000, 28000, 26000, 42000, 21000];
-          break;
-        case 'this_year':
-          allocatedBudgetData = [8000, 6000, 40000, 60000, 80000, 35000];
-          actualSpendingData = [9000, 18000, 45000, 65000, 85000, 40000];
-          break;
-        default:
-          allocatedBudgetData = [4200, 3000, 20000, 35000, 50000, 18000];
-          actualSpendingData = [5000, 14000, 28000, 26000, 42000, 21000];
-          break;
-      }
+              <div id="budgetChart" style="min-height: 400px;" class="echart"></div>
 
-      return { allocatedBudget: allocatedBudgetData, actualSpending: actualSpendingData };
-    }
-
-    // Initialize the chart
-    const budgetChart = echarts.init(document.querySelector("#budgetChart"));
-
-    // Function to update the chart based on the selected filter
-    function updateChart(filter) {
-      const data = fetchData(filter); // Fetch data based on the selected filter
-
-      // Update chart options
-      const options = {
-        legend: {
-          data: ['Allocated Budget', 'Actual Spending']
-        },
-        radar: {
-          indicator: [{
-              name: 'Sales',
-              max: 65000
-            },
-            {
-              name: 'Administration',
-              max: 80000
-            },
-            {
-              name: 'Information Technology',
-              max: 120000
-            },
-            {
-              name: 'Customer Support',
-              max: 120000
-            },
-            {
-              name: 'Development',
-              max: 150000
-            },
-            {
-              name: 'Marketing',
-              max: 80000
-            }
-          ]
-        },
-        series: [{
-          name: 'Budget vs spending',
-          type: 'radar',
-          data: [{
-              value: data.allocatedBudget,
-              name: 'Allocated Budget'
-            },
-            {
-              value: data.actualSpending,
-              name: 'Actual Spending'
-            }
-          ]
-        }]
-      };
-
-      // Set chart options and render
-      budgetChart.setOption(options);
-    }
-
-    // Initial chart render with default filter
-    updateChart('this_month');
-
-    // Event listener for filter selection
-    document.querySelectorAll('.filter-option').forEach(option => {
-      option.addEventListener('click', () => {
-        const selectedFilter = option.getAttribute('data-filter');
-        document.querySelector('#selected-filter').textContent = `| ${option.textContent}`;
-        updateChart(selectedFilter); // Update chart with selected filter
-      });
-    });
-  });
-</script>
-
+              <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  var budgetChart = echarts.init(document.querySelector("#budgetChart")).setOption({
+                    legend: {
+                      data: ['Allocated Budget', 'Actual Spending']
+                    },
+                    radar: {
+                      // shape: 'circle',
+                      indicator: [{
+                          name: 'Sales',
+                          max: 6500
+                        },
+                        {
+                          name: 'Administration',
+                          max: 16000
+                        },
+                        {
+                          name: 'Information Technology',
+                          max: 30000
+                        },
+                        {
+                          name: 'Customer Support',
+                          max: 38000
+                        },
+                        {
+                          name: 'Development',
+                          max: 52000
+                        },
+                        {
+                          name: 'Marketing',
+                          max: 25000
+                        }
+                      ]
+                    },
+                    series: [{
+                      name: 'Budget vs spending',
+                      type: 'radar',
+                      data: [{
+                          value: [4200, 3000, 20000, 35000, 50000, 18000],
+                          name: 'Allocated Budget'
+                        },
+                        {
+                          value: [5000, 14000, 28000, 26000, 42000, 21000],
+                          name: 'Actual Spending'
+                        }
+                      ]
+                    }]
+                  });
+                });
+              </script>
 
             </div>
           </div><!-- End Budget Report -->
@@ -756,18 +855,6 @@ setInterval(updatePercentageChanges, 5000); // Update percentage change every 5 
                   });
                 });
               </script>
-
-            </div>
-          </div><!-- End Website Traffic -->
-          <!-- End News & Updates -->
-
-        </div><!-- End Right side columns -->
-
-        
-
-      </div>
-    </section>
-
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -795,6 +882,7 @@ setInterval(updatePercentageChanges, 5000); // Update percentage change every 5 
   <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="assets/vendor/tinymce/tinymce.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>

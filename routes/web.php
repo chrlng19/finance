@@ -4,6 +4,7 @@ use App\Http\Controllers\SaleController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChartController;
+use App\Http\Controllers\ReportsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -85,6 +86,10 @@ Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showRese
 Route::post('/reset-password', [ResetPasswordController::class, 'reset'])
     ->middleware('guest')
     ->name('password.update');
+
+   
+
+Route::get('/reports/chart-data', [ReportsController::class, 'getChartData'])->name('reports.chartData');
 
 
 require __DIR__.'/auth.php';

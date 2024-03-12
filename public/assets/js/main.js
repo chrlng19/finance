@@ -442,7 +442,7 @@ document.addEventListener("DOMContentLoaded", () => {
   chart.render();
 
   // Example of updating the chart every 5 seconds
-  setInterval(updateChart, 5000); // Update chart every 5 seconds
+  //setInterval(updateChart, 5000); // Update chart every 5 seconds
 });
 
 // Function to update the chart with new data and update the cards
