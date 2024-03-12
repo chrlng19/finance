@@ -280,7 +280,7 @@
       </li>
       
       <li class="nav-item">
-        <a class="nav-link " href="accounts">
+        <a class="nav-link " href="risks">
           <i class="ri-file-shield-2-line"></i>
           <span>Risk Management </span>
         </a>

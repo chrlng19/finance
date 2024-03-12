@@ -12,7 +12,7 @@ class AccountController extends Controller
     public function index()
     {
         $accounts = Account::all();
-        return view('accounts.index', ['accounts' => $accounts]);
+        return view('account.index', ['accounts' => $accounts]);
     }
  
     public function create()

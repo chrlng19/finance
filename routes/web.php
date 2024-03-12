@@ -36,7 +36,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/sales/create', [SaleController::class, 'create'])->name('sales.create');
 Route::post('/sales', [SaleController::class, 'store'])->name('sales.store');
 
-Route::resource('accounts', 'App\Http\Controllers\AccountController');
+Route::resource('risk', 'App\Http\Controllers\AccountController');
 Route::get('/accounts', 'App\Http\Controllers\AccountController@index')->name('accounts.index');
 Route::get('/accounts/create', 'App\Http\Controllers\AccountController@create')->name('accounts.create');
 Route::post('/accounts', 'App\Http\Controllers\AccountController@store')->name('accounts.store');
@@ -91,5 +91,12 @@ Route::post('/reset-password', [ResetPasswordController::class, 'reset'])
 
 Route::get('/reports/chart-data', [ReportsController::class, 'getChartData'])->name('reports.chartData');
 
+// routes/web.php
+
+use App\Http\Controllers\RiskController;
+
+Route::get('/risks', [RiskController::class, 'index'])->name('risks.index');
+Route::get('/risks/create', [RiskController::class, 'create'])->name('risks.create');
+Route::post('/risks', [RiskController::class, 'store'])->name('risks.store');
 
 require __DIR__.'/auth.php';

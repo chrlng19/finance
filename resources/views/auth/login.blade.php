@@ -71,6 +71,7 @@
             <img id="open-eye" src="assets/img/eye.png" alt="Open Eye Icon" class="w-6 h-6" style="display:none;">
         </button>
     </div>
+    
     <script>
     function togglePasswordVisibility() {
         var passwordInput = document.getElementById('password');
