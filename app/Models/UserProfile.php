@@ -1,10 +1,12 @@
-<?php
+<!-- <?php
 
 use App\Models\UserProfile;
 
 use Illuminate\Http\Request;
-use App\Models\UserProfile;
 
+class UserProfile extends Model
+{
+    public function test(){
 $userProfile = new UserProfile();
 $userProfile->full_name = 'Kevin Anderson';
 $userProfile->about = 'Sunt est soluta temporibus...'; // Your about text
@@ -19,3 +21,5 @@ $userProfile->facebook = 'https://facebook.com/#';
 $userProfile->instagram = 'https://instagram.com/#';
 $userProfile->linkedin = 'https://linkedin.com/#';
 $userProfile->save();
+}
+} -->

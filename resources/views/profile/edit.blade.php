@@ -273,8 +273,13 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="dashboard">
-          <i class="bi bi-grid"></i>
+        <i class="ri-dashboard-3-line"></i>
           <span>Dashboard</span>
+        </a>
+        <li class="nav-item">
+        <a class="nav-link " href="risk">
+          <i class="ri-file-shield-2-line"></i>
+          <span>Risk Management </span>
         </a>
       </li><!-- End Dashboard Nav -->
 
