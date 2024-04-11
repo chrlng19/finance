@@ -96,7 +96,7 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\ApiController;
 
-Route::get('/risk', [ApiController::class, 'riskApi']);
+Route::get('/riskApi', [ApiController::class, 'riskApi']);
 
 Route::get('/risk', [RiskController::class, 'index'])->name('risk.index');
 Route::get('/create', [RiskController::class, 'create'])->name('risk.create');
