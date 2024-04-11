@@ -4,9 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\Report;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class ReportsController extends Controller
 {
+    public function index()
+{
+    return view('dashboard');
+}
+
     public function getChartData()
     {
         $reports = Report::select('sales', 'revenue', 'customers', 'report_date')

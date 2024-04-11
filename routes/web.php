@@ -22,9 +22,9 @@ Route::get('/', function () {
 });
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [ReportsController::class, 'index'])
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -94,6 +94,9 @@ Route::get('/reports/chart-data', [ReportsController::class, 'getChartData'])->n
 use App\Http\Controllers\RiskController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\ApiController;
+
+Route::get('/risk', [ApiController::class, 'riskApi']);
 
 Route::get('/risk', [RiskController::class, 'index'])->name('risk.index');
 Route::get('/create', [RiskController::class, 'create'])->name('risk.create');

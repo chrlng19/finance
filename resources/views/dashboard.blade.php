@@ -408,28 +408,30 @@
 
             </div><!-- End Customers Card -->
 
-            <!-- Reports -->
-            <div class="col-12">
-              <div class="card">
+        <!-- Include ApexCharts -->
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
-
-                <div class="card-body">
-                  <h5 class="card-title">Reports <span>/Today</span></h5>
-
-                 <!-- Line Chart -->
-<div id="reportsChart"></div>
+<!-- Reports -->
+<div class="col-12">
+  <div class="card">
+    <div class="filter">
+      <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+        <li class="dropdown-header text-start">
+          <h6>Filter</h6>
+        </li>
+        <li><a class="dropdown-item" href="#">Today</a></li>
+        <li><a class="dropdown-item" href="#">This Month</a></li>
+        <li><a class="dropdown-item" href="#">This Year</a></li>
+      </ul>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Investors Reports <span>/Today</span></h5>
+      <!-- Line Chart -->
+      <div id="reportsChart"></div>
+    </div>
+  </div>
+</div>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
@@ -437,24 +439,31 @@
   });
 
   function fetchChartData() {
-    fetch('{{ route("reports.chartData") }}')
+    fetch('https://fms10-vaims.fguardians-fms.com/api/investor?fbclid=IwAR3wkrwvqH8rR0s5F42X0ZMB95hssA4_wkdZfysFv-xh3kQJmcyUXMbuIcc_aem_Aby8noy8_l2WtXTa-kOIeI6YU_U3yVLmDfU3by4ftatYnQRJE68HQ_gTTF2jKxvTaGGKi_XBwNjwkb_ZNUvb4pdc')
       .then(response => response.json())
       .then(data => renderChart(data))
       .catch(error => console.error('Error fetching chart data:', error));
   }
 
   function renderChart(data) {
-    if (data && data.length > 0) {
+    if (data && data.investor && data.investor.length > 0) {
+      const chartData = data.investor.map(item => ({
+        date: new Date(item.investment_date).toISOString().split('T')[0],
+        sales: parseFloat(item.amount),
+        revenue: parseFloat(item.tax_amount),
+        customers: 1
+      }));
+
       new ApexCharts(document.querySelector("#reportsChart"), {
         series: [{
-          name: 'Sales',
-          data: data.map(item => item.sales),
+          name: 'Amount',
+          data: chartData.map(item => item.sales),
         }, {
-          name: 'Revenue',
-          data: data.map(item => item.revenue),
+          name: 'Tax Amount',
+          data: chartData.map(item => item.revenue),
         }, {
-          name: 'Customers',
-          data: data.map(item => item.customers),
+          name: 'Investors',
+          data: chartData.map(item => item.customers),
         }],
         chart: {
           height: 350,
@@ -464,20 +473,16 @@
           },
         },
         xaxis: {
-          categories: data.map(item => item.date), // Assuming you have a date field in your data
+          categories: chartData.map(item => item.date),
         },
-        // Add other configurations as needed
+
       }).render();
     } else {
       console.error('No data found for chart rendering');
     }
   }
 </script>
-<!-- End Line Chart -->
-                </div>
 
-              </div>
-            </div><!-- End Reports -->
 
           </div>
         </div><!-- End Left side columns -->
